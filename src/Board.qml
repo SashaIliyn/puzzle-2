@@ -11,6 +11,86 @@ Rectangle
 
     function check_game_over()
     {
+		if(img_o1.visible === true && img_o2.visible === true && img_o3.visible === true)
+        {
+            game_over = true;
+            txt_game_over.visible = true;
+        }
+        else if(img_o1.visible && img_o5.visible && img_o9.visible)
+        {
+            game_over = true;
+            txt_game_over.visible = true;
+        }
+        else if(img_o1.visible && img_o4.visible && img_o7.visible)
+        {
+            txt_game_over.visible = true;
+            game_over = true;
+        }
+        else if(img_o2.visible && img_o5.visible && img_o8.visible)
+        {
+            txt_game_over.visible = true;
+            game_over = true;
+        }
+        else if(img_o3.visible && img_o5.visible && img_o7.visible)
+        {
+            txt_game_over.visible = true;
+            game_over = true;
+        }
+        else if(img_o3.visible && img_o6.visible && img_o9.visible)
+        {
+            txt_game_over.visible = true;
+            game_over = true;
+        }
+        else if(img_o4.visible && img_o5.visible && img_o6.visible)
+        {
+            txt_game_over.visible = true;
+            game_over = true;
+        }
+        else if(img_o7.visible && img_o8.visible && img_o9.visible)
+        {
+            txt_game_over.visible = true;
+            game_over = true;
+        }
+        else if(img_x1.visible && img_x2.visible && img_x3.visible)
+        {
+            txt_game_over.visible = true;
+            game_over = true;
+        }
+        else if(img_x1.visible && img_x5.visible && img_x9.visible)
+        {
+            txt_game_over.visible = true;
+            game_over = true;
+        }
+        else if(img_x1.visible && img_x4.visible && img_x7.visible)
+        {
+            txt_game_over.visible = true;
+            game_over = true;
+        }
+        else if(img_x2.visible && img_x5.visible && img_x8.visible)
+        {
+            txt_game_over.visible = true;
+            game_over = true;
+        }
+        else if(img_x3.visible && img_x5.visible && img_x7.visible)
+        {
+            txt_game_over.visible = true;
+            game_over = true;
+        }
+        else if(img_x3.visible && img_x6.visible && img_x9.visible)
+        {
+            txt_game_over.visible = true;
+            game_over = true;
+        }
+        else if(img_x4.visible && img_x5.visible && img_x6.visible)
+        {
+            txt_game_over.visible = true;
+            game_over = true;
+        }
+        else if(img_x7.visible && img_x8.visible && img_x9.visible)
+        {
+            txt_game_over.visible = true;
+            game_over = true;
+        }
     }
 
     id: big_wrapper
@@ -63,6 +143,19 @@ Rectangle
                 width: 75;
                 source: "../img/letter_o.png";
             }
+			
+			MouseArea
+			{
+				// This should probably go in each cell
+
+				// if cell is not clicked and not game over
+			    // Create scope curly braces
+				// Toggle bool based off image 
+				// Set x visible depending on player turn
+				// Toggle player turn
+				// Set has_clicked
+				// Call check_game_over
+			}
         }
 
         Rectangle
