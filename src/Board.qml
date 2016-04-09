@@ -107,6 +107,7 @@ Rectangle
         text: "Game Over"
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
+        z: 3
     }
 
     Grid
@@ -146,15 +147,29 @@ Rectangle
 			
 			MouseArea
 			{
-				// This should probably go in each cell
+                id: ma_mouse_area
+                anchors.fill: parent
 
-				// if cell is not clicked and not game over
-			    // Create scope curly braces
-				// Toggle bool based off image 
-				// Set x visible depending on player turn
-				// Toggle player turn
-				// Set has_clicked
-				// Call check_game_over
+                onClicked: {
+                    // if cell is not clicked and not game over
+                    // Create scope curly braces
+                    if (has_clicked[0] === false && game_over === false){
+                        // Toggle bool based off image
+                        first_player_turn ? img_x1.visible = true : img_o1.visible = true;
+                        // Set x visible depending on player turn
+                        // Toggle player turn
+                        if (first_player_turn == true)
+                            first_player_turn = false;
+                        else
+                            first_player_turn = true;
+                        // Set has_clicked
+                        has_clicked[0] = true;
+                        // Call check_game_over
+                        check_game_over();
+                        if (game_over === true)
+                            txt_game_over.visible = true;
+                    }
+                }
 			}
         }
 
@@ -182,14 +197,231 @@ Rectangle
                 width: 75;
                 source: "../img/letter_o.png";
             }
+            MouseArea
+            {
+                id: ma_mouse_area02
+                anchors.fill: parent
+
+                onClicked: {
+                    // if cell is not clicked and not game over
+                    // Create scope curly braces
+                    if (has_clicked[1] === false && game_over === false){
+                        // Toggle bool based off image
+                        first_player_turn ? img_x2.visible = true : img_o2.visible = true;
+                        // Set x visible depending on player turn
+                        // Toggle player turn
+                        if (first_player_turn == true)
+                            first_player_turn = false;
+                        else
+                            first_player_turn = true;
+                        // Set has_clicked
+                        has_clicked[1] = true;
+                        // Call check_game_over
+                        check_game_over();
+                        if (game_over === true)
+                            txt_game_over.visible = true;
+                    }
+                }
+            }
+
         }
-        Rectangle{border.color: "white"; height: parent.height/3; width: parent.width/3; Image{ id: img_x3; visible: false; anchors.horizontalCenter: parent.horizontalCenter; height: 100; width: 100;source: "../img/letter_x.png";} Image{ id: img_o3; visible:false; anchors.horizontalCenter: parent.horizontalCenter; anchors.verticalCenter: parent.verticalCenter; height: 75; width: 75;source: "../img/letter_o.png";}}
-        Rectangle{border.color: "magenta"; height: parent.height/3; width: parent.width/3;Image{ id: img_x4; visible: false; anchors.horizontalCenter: parent.horizontalCenter; height: 100; width: 100;source: "../img/letter_x.png";} Image{ id: img_o4; visible: false; anchors.horizontalCenter: parent.horizontalCenter; anchors.verticalCenter: parent.verticalCenter; height: 75; width: 75;source: "../img/letter_o.png";}}
-        Rectangle{border.color: "gold"; height: parent.height/3; width: parent.width/3;Image{ id: img_x5; visible: false; anchors.horizontalCenter: parent.horizontalCenter; height: 100; width: 100;source: "../img/letter_x.png";} Image{ id: img_o5; visible: false; anchors.horizontalCenter: parent.horizontalCenter; anchors.verticalCenter: parent.verticalCenter; height: 75; width: 75;source: "../img/letter_o.png";}}
-        Rectangle{border.color: "green"; height: parent.height/3; width: parent.width/3;Image{ id: img_x6; visible: false; anchors.horizontalCenter: parent.horizontalCenter; height: 100; width: 100;source: "../img/letter_x.png";} Image{ id: img_o6; visible: false; anchors.horizontalCenter: parent.horizontalCenter; anchors.verticalCenter: parent.verticalCenter; height: 75; width: 75;source: "../img/letter_o.png";}}
-        Rectangle{border.color: "white"; height: parent.height/3; width: parent.width/3;Image{ id: img_x7; visible: false; anchors.horizontalCenter: parent.horizontalCenter; height: 100; width: 100;source: "../img/letter_x.png";} Image{ id: img_o7; visible: false; anchors.horizontalCenter: parent.horizontalCenter; anchors.verticalCenter: parent.verticalCenter; height: 75; width: 75;source: "../img/letter_o.png";}}
-        Rectangle{border.color: "brown"; height: parent.height/3; width: parent.width/3;Image{ id: img_x8; visible: false; anchors.horizontalCenter: parent.horizontalCenter; height: 100; width: 100;source: "../img/letter_x.png";} Image{ id: img_o8; visible: false; anchors.horizontalCenter: parent.horizontalCenter; anchors.verticalCenter: parent.verticalCenter; height: 75; width: 75;source: "../img/letter_o.png";}}
-        Rectangle{border.color: "white"; height: parent.height/3; width: parent.width/3;Image{ id: img_x9; visible: false; anchors.horizontalCenter: parent.horizontalCenter; height: 100; width: 100;source: "../img/letter_x.png";} Image{ id: img_o9; visible: false; anchors.horizontalCenter: parent.horizontalCenter; anchors.verticalCenter: parent.verticalCenter; height: 75; width: 75;source: "../img/letter_o.png";}}
+        Rectangle{border.color: "white"; height: parent.height/3; width: parent.width/3; Image{ id: img_x3; visible: false; anchors.horizontalCenter: parent.horizontalCenter; height: 100; width: 100;source: "../img/letter_x.png";} Image{ id: img_o3; visible:false; anchors.horizontalCenter: parent.horizontalCenter; anchors.verticalCenter: parent.verticalCenter; height: 75; width: 75;source: "../img/letter_o.png";}
+            MouseArea
+            {
+                id: ma_mouse_area03
+                anchors.fill: parent
+
+                onClicked: {
+                    // if cell is not clicked and not game over
+                    // Create scope curly braces
+                    if (has_clicked[2] === false && game_over === false){
+                        // Toggle bool based off image
+                        first_player_turn ? img_x3.visible = true : img_o3.visible = true;
+                        // Set x visible depending on player turn
+                        // Toggle player turn
+                        if (first_player_turn == true)
+                            first_player_turn = false;
+                        else
+                            first_player_turn = true;
+                        // Set has_clicked
+                        has_clicked[2] = true;
+                        // Call check_game_over
+                        check_game_over();
+                        if (game_over === true)
+                            txt_game_over.visible = true;
+                    }
+                }
+            }
+        }
+        Rectangle{border.color: "magenta"; height: parent.height/3; width: parent.width/3;Image{ id: img_x4; visible: false; anchors.horizontalCenter: parent.horizontalCenter; height: 100; width: 100;source: "../img/letter_x.png";} Image{ id: img_o4; visible: false; anchors.horizontalCenter: parent.horizontalCenter; anchors.verticalCenter: parent.verticalCenter; height: 75; width: 75;source: "../img/letter_o.png";}
+            MouseArea
+            {
+                id: ma_mouse_area04
+                anchors.fill: parent
+
+                onClicked: {
+                    // if cell is not clicked and not game over
+                    // Create scope curly braces
+                    if (has_clicked[3] === false && game_over === false){
+                        // Toggle bool based off image
+                        first_player_turn ? img_x4.visible = true : img_o4.visible = true;
+                        // Set x visible depending on player turn
+                        // Toggle player turn
+                        if (first_player_turn == true)
+                            first_player_turn = false;
+                        else
+                            first_player_turn = true;
+                        // Set has_clicked
+                        has_clicked[3] = true;
+                        // Call check_game_over
+                        check_game_over();
+                        if (game_over === true)
+                            txt_game_over.visible = true;
+                    }
+                }
+            }
+        }
+        Rectangle{border.color: "gold"; height: parent.height/3; width: parent.width/3;Image{ id: img_x5; visible: false; anchors.horizontalCenter: parent.horizontalCenter; height: 100; width: 100;source: "../img/letter_x.png";} Image{ id: img_o5; visible: false; anchors.horizontalCenter: parent.horizontalCenter; anchors.verticalCenter: parent.verticalCenter; height: 75; width: 75;source: "../img/letter_o.png";}
+            MouseArea
+            {
+                id: ma_mouse_area05
+                anchors.fill: parent
+
+                onClicked: {
+                    // if cell is not clicked and not game over
+                    // Create scope curly braces
+                    if (has_clicked[4] === false && game_over === false){
+                        // Toggle bool based off image
+                        first_player_turn ? img_x5.visible = true : img_o5.visible = true;
+                        // Set x visible depending on player turn
+                        // Toggle player turn
+                        if (first_player_turn == true)
+                            first_player_turn = false;
+                        else
+                            first_player_turn = true;
+                        // Set has_clicked
+                        has_clicked[4] = true;
+                        // Call check_game_over
+                        check_game_over();
+                        if (game_over === true)
+                            txt_game_over.visible = true;
+                    }
+                }
+            }
+        }
+        Rectangle{border.color: "green"; height: parent.height/3; width: parent.width/3;Image{ id: img_x6; visible: false; anchors.horizontalCenter: parent.horizontalCenter; height: 100; width: 100;source: "../img/letter_x.png";} Image{ id: img_o6; visible: false; anchors.horizontalCenter: parent.horizontalCenter; anchors.verticalCenter: parent.verticalCenter; height: 75; width: 75;source: "../img/letter_o.png";}
+            MouseArea
+            {
+                id: ma_mouse_area06
+                anchors.fill: parent
+
+                onClicked: {
+                    // if cell is not clicked and not game over
+                    // Create scope curly braces
+                    if (has_clicked[5] === false && game_over === false){
+                        // Toggle bool based off image
+                        first_player_turn ? img_x6.visible = true : img_o6.visible = true;
+                        // Set x visible depending on player turn
+                        // Toggle player turn
+                        if (first_player_turn == true)
+                            first_player_turn = false;
+                        else
+                            first_player_turn = true;
+                        // Set has_clicked
+                        has_clicked[5] = true;
+                        // Call check_game_over
+                        check_game_over();
+                        if (game_over === true)
+                            txt_game_over.visible = true;
+                    }
+                }
+            }
+        }
+        Rectangle{border.color: "white"; height: parent.height/3; width: parent.width/3;Image{ id: img_x7; visible: false; anchors.horizontalCenter: parent.horizontalCenter; height: 100; width: 100;source: "../img/letter_x.png";} Image{ id: img_o7; visible: false; anchors.horizontalCenter: parent.horizontalCenter; anchors.verticalCenter: parent.verticalCenter; height: 75; width: 75;source: "../img/letter_o.png";}
+            MouseArea
+            {
+                id: ma_mouse_area07
+                anchors.fill: parent
+
+                onClicked: {
+                    // if cell is not clicked and not game over
+                    // Create scope curly braces
+                    if (has_clicked[6] === false && game_over === false){
+                        // Toggle bool based off image
+                        first_player_turn ? img_x7.visible = true : img_o7.visible = true;
+                        // Set x visible depending on player turn
+                        // Toggle player turn
+                        if (first_player_turn == true)
+                            first_player_turn = false;
+                        else
+                            first_player_turn = true;
+                        // Set has_clicked
+                        has_clicked[6] = true;
+
+                    }
+                    // Call check_game_over
+                    check_game_over();
+                    if (game_over === true)
+                        txt_game_over.visible = true;
+                }
+            }
+        }
+        Rectangle{border.color: "brown"; height: parent.height/3; width: parent.width/3;Image{ id: img_x8; visible: false; anchors.horizontalCenter: parent.horizontalCenter; height: 100; width: 100;source: "../img/letter_x.png";} Image{ id: img_o8; visible: false; anchors.horizontalCenter: parent.horizontalCenter; anchors.verticalCenter: parent.verticalCenter; height: 75; width: 75;source: "../img/letter_o.png";}
+            MouseArea
+            {
+                id: ma_mouse_area08
+                anchors.fill: parent
+
+                onClicked: {
+                    // if cell is not clicked and not game over
+                    // Create scope curly braces
+                    if (has_clicked[7] === false && game_over === false){
+                        // Toggle bool based off image
+                        first_player_turn ? img_x8.visible = true : img_o8.visible = true;
+                        // Set x visible depending on player turn
+                        // Toggle player turn
+                        if (first_player_turn == true)
+                            first_player_turn = false;
+                        else
+                            first_player_turn = true;
+                        // Set has_clicked
+                        has_clicked[7] = true;
+                        // Call check_game_over
+                        check_game_over();
+                    }
+                    if (game_over === true)
+                        txt_game_over.visible = true;
+                }
+            }
+        }
+        Rectangle{border.color: "white"; height: parent.height/3; width: parent.width/3;Image{ id: img_x9; visible: false; anchors.horizontalCenter: parent.horizontalCenter; height: 100; width: 100;source: "../img/letter_x.png";} Image{ id: img_o9; visible: false; anchors.horizontalCenter: parent.horizontalCenter; anchors.verticalCenter: parent.verticalCenter; height: 75; width: 75;source: "../img/letter_o.png";}
+            MouseArea
+            {
+                id: ma_mouse_area09
+                anchors.fill: parent
+
+                onClicked: {
+                    // if cell is not clicked and not game over
+                    // Create scope curly braces
+                    if (has_clicked[8] === false && game_over === false){
+                        // Toggle bool based off image
+                        first_player_turn ? img_x9.visible = true : img_o9.visible = true;
+                        // Set x visible depending on player turn
+                        // Toggle player turn
+                        if (first_player_turn == true)
+                            first_player_turn = false;
+                        else
+                            first_player_turn = true;
+                        // Set has_clicked
+                        has_clicked[8] = true;
+                        // Call check_game_over
+                        check_game_over();
+                        if (game_over === true)
+                            txt_game_over.visible = true;
+                    }
+                }
+            }
+        }
     }
 
     Rectangle
